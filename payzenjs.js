@@ -45,7 +45,7 @@ SOFTWARE.
  * @returns
  */
 function PayzenJS() {
-
+		
 	/**
 	 * Main method that takes configuration and perform the payment operation
 	 * using the form method provided by Payzen platform.
@@ -60,27 +60,6 @@ function PayzenJS() {
 		}
 	};
 
-	// Get current data in the right format
-	var currDate = new Date, formattedDate = [
-			currDate.getUTCFullYear().toString().lpad("0", 4),
-			(currDate.getUTCMonth() + 1).toString().lpad("0", 2),
-			currDate.getUTCDate().toString().lpad("0", 2) ].join("")
-			+ [ currDate.getUTCHours().toString().lpad("0", 2),
-					currDate.getUTCMinutes().toString().lpad("0", 2),
-					currDate.getUTCSeconds().toString().lpad("0", 2) ].join("");
-
-	// Default config data
-	var defaultOrderData = Object.freeze({
-		vads_trans_id : Math.floor((Math.random() * 999999) + 1).toString()
-				.lpad("0", 6),
-		vads_trans_date : formattedDate,
-		vads_currency : "978",
-		vads_action_mode : "INTERACTIVE",
-		vads_page_action : "PAYMENT",
-		vads_version : "V2",
-		vads_payment_config : "SINGLE"
-	});
-
 	/*
 	 * Verifies the data of the sent config
 	 */
@@ -92,8 +71,9 @@ function PayzenJS() {
 		var configPropsToCheck = [ "credentials", "orderData" ];
 
 		for ( var prop in configPropsToCheck) {
-			if (!configPropsToCheck[prop]) {
-				integrationError(buildCheckMessage("config." + prop.name));
+			if (!config[configPropsToCheck[prop]]) {
+				integrationError(buildCheckMessage("config."
+						+ configPropsToCheck[prop]));
 				return false;
 			}
 		}
@@ -134,6 +114,17 @@ function PayzenJS() {
 	 * Retrieve the credentials used by the payment platform
 	 */
 	var buildCredentialsAndSendForm = function(config, orderData) {
+		// Set iframe mode if canvas is defined
+		if (config.canvas) {
+			var modeIframe = "MODE_IFRAME=true";
+			if (orderData.vads_theme_config) {
+				orderData.vads_theme_config = modeIframe + ";"
+						+ orderData.vads_theme_config;
+			} else {
+				orderData.vads_theme_config = modeIframe;
+			}
+		}
+
 		if (config.credentials.signature) {
 			buildOrderForm(config.target, config.canvas, orderData,
 					config.credentials).submit();
@@ -149,6 +140,7 @@ function PayzenJS() {
 					}
 				}
 			};
+
 			httpRequest.open("POST", config.credentials.source);
 			httpRequest.setRequestHeader("Content-Type",
 					"application/json;charset=UTF-8");
@@ -194,7 +186,7 @@ function PayzenJS() {
 			case "DIV":
 				// Clear div
 				canvasElement.innerHTML = "";
-				// Create and add iframe			
+				// Create and add iframe
 				canvasElement.appendChild(buildIframe(canvas));
 				return canvas.id;
 				break;
@@ -247,6 +239,37 @@ function PayzenJS() {
 		}
 		return obj3;
 	};
+
+	/*
+	 * Left pad a number
+	 */
+	var lpad = function(numberStr, padString, length) {
+		while (numberStr.length < length)
+			paddedString = padString + numberStr;
+		return numberStr;
+	};
+	
+	// Get current data in the right format
+	var currDate = new Date(), formattedDate = [
+			lpad(currDate.getUTCFullYear().toString(), "0", 4),
+			lpad((currDate.getUTCMonth() + 1).toString(), "0", 2),
+			lpad(currDate.getUTCDate().toString(), "0", 2) ].join("")
+			+ [ lpad(currDate.getUTCHours().toString(), "0", 2),
+					lpad(currDate.getUTCMinutes().toString(), "0", 2),
+					lpad(currDate.getUTCSeconds().toString(), "0", 2) ]
+					.join("");
+
+	// Default config data
+	var defaultOrderData = Object.freeze({
+		vads_trans_id : lpad(Math.floor((Math.random() * 999999) + 1)
+				.toString(), "0", 6),
+		vads_trans_date : formattedDate,
+		vads_currency : "978",
+		vads_action_mode : "INTERACTIVE",
+		vads_page_action : "PAYMENT",
+		vads_version : "V2",
+		vads_payment_config : "SINGLE"
+	});
 };
 
 /**
@@ -257,12 +280,4 @@ function PayzenJS() {
  */
 PayzenJS.go = function(config) {
 	new PayzenJS().go(config);
-}
-
-// Just some extra syntactical sugar...
-String.prototype.lpad = function(padString, length) {
-	var str = this;
-	while (str.length < length)
-		str = padString + str;
-	return str;
-}
+};
