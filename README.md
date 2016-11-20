@@ -40,7 +40,7 @@ You will be able to perform all possible Payzen operations (depends on your acco
 
 * Its DONE!
 
-**Note:** if you want to add it as a module in your **nodeJS** project with npm, you can just do add it easily:
+**Note:** if you want to add it as a module in your **Node.js** project with npm, you can just do add it easily:
 
     npm install PayzenJS
     
