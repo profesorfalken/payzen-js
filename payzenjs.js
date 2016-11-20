@@ -271,3 +271,6 @@ function PayzenJS() {
 PayzenJS.go = function (config) {
     new PayzenJS().go(config);
 };
+
+//Export as a node module
+module.exports = PayzenJS;
