@@ -273,4 +273,5 @@ PayzenJS.go = function (config) {
 };
 
 //Export as a node module
+window.module = window.module || {}; // Work even in case of standalone use
 module.exports = PayzenJS;
