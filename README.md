@@ -49,13 +49,13 @@ Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-paym
 
 * Its DONE!
 
-**Note:** this is a client-side but if you want to take advantage of **Node.js** npm package system and require it using solutions as [browserify](http://browserify.org), you can:
+**Note:** this is a client-side but if you want to take advantage of **Node.js** npm package system and require it using solutions as [browserify](http://browserify.org), you can perform a:
 
     npm install PayzenJS
     
 And/or add it to your project dependencies in package.json.
 
-After that, you can use it anytime you want:
+After that, you can use it anytime you want and it will be bundled in your solution:
 
 ```javascript
    var PayzenJS = require("PayzenJS");
@@ -111,30 +111,45 @@ Then you only have to set the right config.
 
 ## Handle credentials ##
 
-In order to authenticate the request it is necessary to sign the form data: https://payzen.io/en-EN/form-payment/standard-payment/computing-the-signature.html
+In order to authenticate the request it is necessary to sign the form data: 
 
-This signature can be set directly in the credentials config:
+In order to authenticate using PayzenJS, you have to set one online resource which should calculate the signature.
 
 ```javascript
     {
 	[...]
         credentials : {
-           signature: "606b369759fac4f0864144c803c73676cbe470ff"
+           source: "credential.php"
 	    }
 	[...]
     }
 ```
 
-Or you can set one online resource which should calculate the signature.
-Il will be called in a GET call containing all the parameters and return the signature (be sure to enforce the same-origin policy to avoid cross-domain!)
-[]
+This will call and endpoint called credential.php. This call will be:
 
-The response from server should be a JSON (application/json) with this format: 
+* Made by POST
+* With a content-type: application/json;charset=UTF-8
+* With a JSON as payload containing all the form fields
+
+```javascript
+    {vads_trans_id: "024366", vads_trans_date: "20161124193157", va...}
+```
+
+On server side you must sign the content using your private key as described in the official documentation:
+
+https://payzen.io/en-EN/form-payment/standard-payment/computing-the-signature.html
+
+And give a response from server that must be also JSON (application/json) encoded in UTF-8 and with this format: 
 
     {"signature": "606b369759fac4f0864144c803c73676cbe470ff"}
 
+## Examples of credential calculation implementation ##
+
+* [In PHP] (https://github.com/profesorfalken/profesorfalken.github.io/blob/master/examples/PayzenJS/credential/php/credential.php)
+* [In Java (Servlet)] (https://github.com/profesorfalken/profesorfalken.github.io/blob/master/examples/PayzenJS/credential/java/servlet/Credential.java)
+
 ## Advanced Usage ##
 
-For more complex payment operations, please check all the possible parameters / operations here: 
+For more complex payment operations (card registration, payment by id, etc), please check all the possible parameters / operations here: 
 
 https://payzen.io/en-EN/form-payment/standard-payment/generating-a-payment-form.html
