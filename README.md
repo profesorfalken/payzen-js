@@ -27,7 +27,6 @@ With PayzenJS you can perform:
 
 Your creativity and skills are your only limit!
 
-
 Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-payment/deferred-payment.html) to see what operations you can accomplish.
 
 ## Characteristics ##
@@ -35,7 +34,7 @@ Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-paym
 * Just download and use.
 * Tiny JavaScript File.
 * No a single dependency. Pure JavaScript Vanilla that work in your browser out of the box.
-* Simpliest installation and configuration.
+* The simpliest installation and configuration.
 
 ## Installation ##
 
@@ -50,11 +49,17 @@ Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-paym
 
 * Its DONE!
 
-**Note:** if you want to add it as a module in your **Node.js** project with npm, you can just do add it easily:
+**Note:** this is a client-side but if you want to take advantage of **Node.js** npm package system and require it using solutions as [browserify](http://browserify.org), you can:
 
     npm install PayzenJS
     
-And/or add it to your project dependencies.
+And/or add it to your project dependencies in package.json.
+
+After that, you can use it anytime you want:
+
+```javascript
+   var PayzenJS = require("PayzenJS");
+```
 
 ## Basic Usage ##
 
@@ -63,15 +68,15 @@ And/or add it to your project dependencies.
 ```javascript
     //Launch full form payment
     PayzenJS.go({								
-				orderData: {
-					vads_site_id: "12345678",
-					vads_ctx_mode: "TEST",
-					vads_amount: "100"
-				},
-				credentials : {
-					source: "demopayzenjs/credential"
-				}
-			});   
+		orderData: {
+			vads_site_id: "12345678",
+			vads_ctx_mode: "TEST",
+			vads_amount: "100"
+		},
+		credentials : {
+			source: "credential.php"
+		}
+	});   
 ```
 
 #### Payment into canvas (iframe) ####
@@ -90,18 +95,18 @@ Then you only have to set the right config.
 ```javascript
     //Launch full form payment
     PayzenJS.go({			
-                canvas: {
-				    id: "paymentCanvas"
-                },				
-				orderData: {
-					vads_site_id: "12345678",
-					vads_ctx_mode: "TEST",
-					vads_amount: "100"
-				},
-				credentials : {
-					source: "demopayzenjs/credential"
-				}
-			});   
+	canvas: {
+			    id: "paymentCanvas"
+		},				
+	orderData: {
+		vads_site_id: "12345678",
+		vads_ctx_mode: "TEST",
+		vads_amount: "100"
+	},
+	credentials : {
+		source: "credential.php"
+	}
+	});   
 ```
 
 #### Payment into canvas (iframe) ####
@@ -120,18 +125,18 @@ Then you only have to set the right config.
 ```javascript
     //Launch full form payment
     PayzenJS.go({			
-                canvas: {
-				    id: "paymentCanvas"
-                },				
-				orderData: {
-					vads_site_id: "12345678",
-					vads_ctx_mode: "TEST",
-					vads_amount: "100"
-				},
-				credentials : {
-					source: "demopayzenjs/credential"
-				}
-			});   
+	canvas: {
+			    id: "paymentCanvas"
+	},				
+	orderData: {
+		vads_site_id: "12345678",
+		vads_ctx_mode: "TEST",
+		vads_amount: "100"
+	},
+	credentials : {
+		source: "demopayzenjs/credential"
+	}
+	});   
 ```
 
 ## Handle credentials ##
