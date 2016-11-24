@@ -2,7 +2,18 @@
 
 PayzenJS is a javascript library that allows you to integrate Payzen platform in your site easily.
 
-You just have to copy an snippet of code in your page to start making transactions for your shop.
+```javascript
+    PayzenJS.go({								
+		orderData: {
+			vads_site_id: "12345678",
+			vads_ctx_mode: "TEST",
+			vads_amount: "100"
+		},
+		credentials : {
+			source: "credential.php"
+		}
+	});   
+```
 
 See live demo here: http://www.profesorfalken.com/PayzenJSDemo
 
