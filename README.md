@@ -1,3 +1,5 @@
+![](https://img.shields.io/github/license/profesorfalken/payzen-js.svg)
+
 # PayzenJS library 
 
 PayzenJS is a javascript library that allows you to integrate Payzen platform in your site easily.
