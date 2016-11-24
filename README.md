@@ -109,36 +109,6 @@ Then you only have to set the right config.
 	});   
 ```
 
-#### Payment into canvas (iframe) ####
-
-First, you have to set the 'canvas'. 
-This can be an existing div element in your page or an already defined iframe.
-
-```HTML
-    [your page]
-    <div id="paymentCanvas"/>
-	[your page]
-```
-
-Then you only have to set the right config.
-
-```javascript
-    //Launch full form payment
-    PayzenJS.go({			
-		canvas: {
-				    id: "paymentCanvas"
-		},				
-		orderData: {
-			vads_site_id: "12345678",
-			vads_ctx_mode: "TEST",
-			vads_amount: "100"
-		},
-		credentials : {
-			source: "demopayzenjs/credential"
-		}
-	});   
-```
-
 ## Handle credentials ##
 
 In order to authenticate the request it is necessary to sign the form data: https://payzen.io/en-EN/form-payment/standard-payment/computing-the-signature.html
