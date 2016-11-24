@@ -95,17 +95,17 @@ Then you only have to set the right config.
 ```javascript
     //Launch full form payment
     PayzenJS.go({			
-	canvas: {
-			    id: "paymentCanvas"
-		},				
-	orderData: {
-		vads_site_id: "12345678",
-		vads_ctx_mode: "TEST",
-		vads_amount: "100"
-	},
-	credentials : {
-		source: "credential.php"
-	}
+		canvas: {
+				    id: "paymentCanvas"
+			},				
+		orderData: {
+			vads_site_id: "12345678",
+			vads_ctx_mode: "TEST",
+			vads_amount: "100"
+		},
+		credentials : {
+			source: "credential.php"
+		}
 	});   
 ```
 
@@ -125,17 +125,17 @@ Then you only have to set the right config.
 ```javascript
     //Launch full form payment
     PayzenJS.go({			
-	canvas: {
-			    id: "paymentCanvas"
-	},				
-	orderData: {
-		vads_site_id: "12345678",
-		vads_ctx_mode: "TEST",
-		vads_amount: "100"
-	},
-	credentials : {
-		source: "demopayzenjs/credential"
-	}
+		canvas: {
+				    id: "paymentCanvas"
+		},				
+		orderData: {
+			vads_site_id: "12345678",
+			vads_ctx_mode: "TEST",
+			vads_amount: "100"
+		},
+		credentials : {
+			source: "demopayzenjs/credential"
+		}
 	});   
 ```
 
