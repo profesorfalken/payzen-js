@@ -1,3 +1,5 @@
+[![NPM Version][npm-image]][npm-url]
+
 # PayzenJS library 
 
 Javascript library to use Payzen platform easily
