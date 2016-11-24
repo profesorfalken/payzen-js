@@ -145,9 +145,8 @@ Il will be called in a GET call containing all the parameters and return the sig
 []
 
 The response from server should be a JSON (application/json) with this format: 
-{
-    signature: "606b369759fac4f0864144c803c73676cbe470ff"
-}
+
+    {"signature": "606b369759fac4f0864144c803c73676cbe470ff"}
 
 ## Advanced Usage ##
 
