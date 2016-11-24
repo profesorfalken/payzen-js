@@ -1,33 +1,30 @@
-[![NPM Version][npm-image]][npm-url]
-
 # PayzenJS library 
 
-Javascript library to use Payzen platform easily
+PayzenJS is a javascript library that allows you to integrate Payzen platform in your site easily.
 
-## Characteristics ##
+You just have to copy an snippet of code in your page to start making transactions for your shop.
 
-* Very small JavaScript File.
-* Download and use.
-* No dependencies. Just pure JavaScript Vanilla.
-* Simple installation and configuration.
+See live demo here: http://www.profesorfalken.com/PayzenJSDemo
 
 ## What can I do with it ##
 
-You can perform:
+With PayzenJS you can perform:
 
-* Payment by form in browser.
-* Payment by iframe.
-* Payment using popups, transitions, etc (using external libs if necessary)
+* Payment operations by form in browser.
+* Payment operations by iframe.
+* Payment operations using popups, transitions, etc (using external libs if necessary). 
 
-You will be able to perform all possible Payzen operations (depends on your account): 
+Your creativity and skills are your only limit!
 
-* Payment by card.
-* Payment 3DS.
-* Card registration.
-* Payment by id.
-* Subscriptions.
-* Multi-payments.
-* [etc etc etc]
+
+Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-payment/deferred-payment.html) to see what operations you can accomplish.
+
+## Characteristics ##
+
+* Just download and use.
+* Tiny JavaScript File.
+* No a single dependency. Pure JavaScript Vanilla that work in your browser out of the box.
+* Simpliest installation and configuration.
 
 ## Installation ##
 
