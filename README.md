@@ -31,10 +31,10 @@ Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-paym
 
 ## Characteristics ##
 
-* Just download and use.
 * Tiny JavaScript File.
+* Just download and use.
+* Easy configuration
 * No a single dependency. Pure JavaScript Vanilla that work in your browser out of the box.
-* The simpliest installation and configuration.
 
 ## Installation ##
 
@@ -47,9 +47,11 @@ Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-paym
     [...]
 ```
 
-* Its DONE!
+* Its DONE! you can go now to 'Basic Usage'
 
-**Note:** this is a client-side but if you want to take advantage of **Node.js** npm package system and require it using solutions as [browserify](http://browserify.org), you can perform a:
+#### Optional (Node.js - browserify) ####
+
+This is a client-side but if you want to take advantage of **Node.js** npm package system and require it using solutions as [browserify](http://browserify.org), you can perform a:
 
     npm install PayzenJS
     
@@ -143,7 +145,7 @@ And give a response from server that must be also JSON (application/json) encode
 
     {"signature": "606b369759fac4f0864144c803c73676cbe470ff"}
 
-## Examples of credential calculation implementation ##
+#### Examples of credential calculation implementation ####
 
 * [In PHP] (https://github.com/profesorfalken/profesorfalken.github.io/blob/master/examples/PayzenJS/credential/php/credential.php)
 * [In Java (Servlet)] (https://github.com/profesorfalken/profesorfalken.github.io/blob/master/examples/PayzenJS/credential/java/servlet/Credential.java)
