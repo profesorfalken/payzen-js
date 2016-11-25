@@ -1,3 +1,5 @@
+![](https://img.shields.io/github/license/profesorfalken/payzen-js.svg)
+
 # PayzenJS library 
 
 PayzenJS is a javascript library that allows you to integrate Payzen platform in your site easily.
@@ -127,7 +129,7 @@ In order to authenticate using PayzenJS, you have to set one online resource whi
     }
 ```
 
-This will call and endpoint called credential.php. This call will be:
+In this case, this will call and endpoint called _credential.php_. This call will be:
 
 * Made by POST
 * With a content-type: application/json;charset=UTF-8
