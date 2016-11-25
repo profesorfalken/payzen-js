@@ -109,7 +109,7 @@ function PayzenJS() {
      */
     var buildCredentialsAndSendForm = function (config, orderData) {
         // Set iframe mode if canvas is defined
-        if (config.canvas) {
+        if (config.canvas && config.canvas.id) {
             var modeIframe = "MODE_IFRAME=true";
             if (orderData.vads_theme_config) {
                 orderData.vads_theme_config = modeIframe + ";"
