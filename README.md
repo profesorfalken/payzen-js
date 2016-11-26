@@ -155,11 +155,11 @@ And give a response from server that must be also JSON (application/json) encode
 * [In Java (Servlet)] (https://github.com/profesorfalken/profesorfalken.github.io/blob/master/examples/PayzenJS/credential/java/servlet/Credential.java)
 
 
-#### IMPORTANT SECURITY NOTE ####
+## IMPORTANT SECURITY NOTE ##
 
-Note that this credential calculation can carry security concerns if you do not secure your application correctly. 
+Note that this credential calculation could carry security concerns if you do not secure your application properly. 
 
-An smart attacker could forget a request using the cource enpoint and sign requests without event knowing the private key.
+An smart attacker, for example, could forget a request using the cource enpoint and sign requests without event knowing the private key.
 
 You sould be protected from this possible [Cross Site Request Forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack using the common means:
 
