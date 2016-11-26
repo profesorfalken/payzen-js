@@ -154,6 +154,22 @@ And give a response from server that must be also JSON (application/json) encode
 * [In PHP] (https://github.com/profesorfalken/profesorfalken.github.io/blob/master/examples/PayzenJS/credential/php/credential.php)
 * [In Java (Servlet)] (https://github.com/profesorfalken/profesorfalken.github.io/blob/master/examples/PayzenJS/credential/java/servlet/Credential.java)
 
+
+#### IMPORTANT SECURITY NOTE ####
+
+Note that this credential calculation can carry security concerns if you do not secure your application correctly. 
+
+An smart attacker could forget a request using the cource enpoint and sign requests without event knowing the private key.
+
+You sould be protected from this possible [Cross Site Request Forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack using the common means:
+
+* Restricting Access-Control-Allow-Origin policy
+* Controlling the referer origin.
+* Transmitting a session/request csrf token.
+* Using all the controls provided by your infrastructure (proxy, server, etc)
+
+More information here: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
+
 ## Advanced Usage ##
 
 For more complex payment operations (card registration, payment by id, etc), please check all the possible parameters / operations here: 
