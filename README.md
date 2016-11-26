@@ -17,6 +17,8 @@ PayzenJS is a javascript library that allows you to integrate Payzen platform in
 	});   
 ```
 
+![PayzenJS in action](http://www.cippu.org/pic/d8W9g37eQ2aS7pUU)
+
 See live demo here: http://www.profesorfalken.com/PayzenJSDemo
 
 ## What can I do with it ##
@@ -53,7 +55,7 @@ Check [Payzen documentation] (https://payzen.io/en-EN/form-payment/standard-paym
 
 #### Optional (Node.js - browserify) ####
 
-This is a client-side but if you want to take advantage of **Node.js** npm package system and require it using solutions as [browserify](http://browserify.org), you can perform a:
+This is a client-side library but if you want to take advantage of **Node.js** npm package system and require it using solutions as [browserify](http://browserify.org), you can perform a:
 
     npm install PayzenJS
     
