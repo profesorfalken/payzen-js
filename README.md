@@ -17,7 +17,7 @@ PayzenJS is a javascript library that allows you to integrate Payzen platform in
 	});   
 ```
 
-![PayzenJS in action](http://www.cippu.org/pic/q31sXaPEQm2ggwvb)
+![PayzenJS in action](http://www.cippu.org/pic/d8W9g37eQ2aS7pUU)
 
 See live demo here: http://www.profesorfalken.com/PayzenJSDemo
 
