@@ -1,6 +1,6 @@
 {
   "name": "PayzenJS",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Javascript library to use Payzen platform easily",
   "main": "index.js",
   "scripts": {

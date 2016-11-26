@@ -183,7 +183,8 @@ function PayzenJS() {
                 canvasElement.appendChild(buildIframe(canvas));
                 return canvas.id;
             case "IFRAME":
-                canvasElement.name(canvas.id);
+                canvasElement.name = canvas.id;
+                canvasElement.scrolling = canvas.scrolling;
                 return canvas.id;
             }
         }
@@ -198,8 +199,9 @@ function PayzenJS() {
         var iframe = document.createElement("iframe");
         iframe.frameBorder = 0;
         iframe.width = (canvas.width || "600") + "px";
-        iframe.height = (canvas.heigh || "440") + "px";
+        iframe.height = (canvas.heigh || "430") + "px";
         iframe.name = canvas.id;
+        iframe.scrolling = canvas.scrolling;
         return iframe;
     };
 
