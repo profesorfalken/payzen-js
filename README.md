@@ -159,7 +159,7 @@ And give a response from server that must be also JSON (application/json) encode
 
 Note that this credential calculation could carry security concerns if you do not secure your application properly. 
 
-An smart attacker, for example, could forget a request using the cource enpoint and sign requests without event knowing the private key.
+For example, a smart attacker could forge a request using the 'source' enpoint and sign his requests without event knowing the merchant private key.
 
 You sould be protected from this possible [Cross Site Request Forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attack using the common means:
 
