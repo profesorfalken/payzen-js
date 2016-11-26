@@ -2,7 +2,7 @@
 
 # PayzenJS library 
 
-PayzenJS is a javascript library that allows you to integrate Payzen platform in your site easily.
+PayzenJS is a javascript library that allows you to integrate [Payzen platform](https://payzen.eu/) in your site easily.
 
 ```javascript
     PayzenJS.go({								
