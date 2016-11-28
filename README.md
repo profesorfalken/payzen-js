@@ -98,6 +98,23 @@ Other possible values are:
 * Payzen Inde: **secure.payzen.co.in**
 * Payzen Brazil: **secure.payzen.com.br**
 
+To use them you just have to insert a 'target' value in your config:
+
+```javascript
+    //Launch full form payment
+    PayzenJS.go({
+                target: "de.payzen.eu",
+		orderData: {
+			vads_site_id: "12345678",
+			vads_ctx_mode: "TEST",
+			vads_amount: "100"
+		},
+		credentials : {
+			source: "credential.php"
+		}
+	});   
+```
+
 #### Payment into canvas (iframe) ####
 
 First, you have to set the 'canvas'. 
