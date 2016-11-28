@@ -93,10 +93,10 @@ By default it will use _secure.payzen.eu_ (Payzen France)
 
 Other possible values are:
 
-* Payzen Germany: de.payzen.eu
-* Payzen OSB: secure.osb.pf
-* Payzen Inde: secure.payzen.co.in
-* Payzen Brazil: secure.payzen.com.br
+* Payzen Germany: **de.payzen.eu**
+* Payzen OSB: **secure.osb.pf**
+* Payzen Inde: **secure.payzen.co.in**
+* Payzen Brazil: **secure.payzen.com.br**
 
 #### Payment into canvas (iframe) ####
 
