@@ -85,36 +85,6 @@ After that, you can use it anytime you want and it will be bundled in your solut
 	});   
 ```
 
-#### Target Platforms ####
-
-When using Payzen platform, you can specify the main platform you want to target depending on your country/product.
-
-By default it will use _secure.payzen.eu_ (Payzen France)
-
-Other possible values are:
-
-* Payzen Germany: **de.payzen.eu**
-* Payzen OSB: **secure.osb.pf**
-* Payzen Inde: **secure.payzen.co.in**
-* Payzen Brazil: **secure.payzen.com.br**
-
-To use them you just have to insert a 'target' value in your config:
-
-```javascript
-    //Launch full form payment
-    PayzenJS.go({
-                target: "de.payzen.eu",
-		orderData: {
-			vads_site_id: "12345678",
-			vads_ctx_mode: "TEST",
-			vads_amount: "100"
-		},
-		credentials : {
-			source: "credential.php"
-		}
-	});   
-```
-
 #### Payment into canvas (iframe) ####
 
 First, you have to set the 'canvas'. 
@@ -134,6 +104,36 @@ Then you only have to set the right config.
 		canvas: {
 				    id: "paymentCanvas"
 			},				
+		orderData: {
+			vads_site_id: "12345678",
+			vads_ctx_mode: "TEST",
+			vads_amount: "100"
+		},
+		credentials : {
+			source: "credential.php"
+		}
+	});   
+```
+
+#### Target Platforms ####
+
+When using Payzen platform, you can specify the main platform you want to target depending on your country/product.
+
+By default it will use _secure.payzen.eu_ (Payzen France)
+
+Other possible values are:
+
+* Payzen Germany: **de.payzen.eu**
+* Payzen OSB: **secure.osb.pf**
+* Payzen Inde: **secure.payzen.co.in**
+* Payzen Brazil: **secure.payzen.com.br**
+
+To use them you just have to insert a 'target' value in your config:
+
+```javascript
+    //Launch full form payment
+    PayzenJS.go({
+                target: "de.payzen.eu",
 		orderData: {
 			vads_site_id: "12345678",
 			vads_ctx_mode: "TEST",
