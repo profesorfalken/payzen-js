@@ -85,6 +85,19 @@ After that, you can use it anytime you want and it will be bundled in your solut
 	});   
 ```
 
+#### Target Platforms ####
+
+When using Payzen platform, you can specify the main platform you want to target depending on your country/product.
+
+By default it will use _secure.payzen.eu_ (Payzen France)
+
+Other possible values are:
+
+* Payzen Germany: de.payzen.eu
+* Payzen OSB: secure.osb.pf
+* Payzen Inde: secure.payzen.co.in
+* Payzen Brazil: secure.payzen.com.br
+
 #### Payment into canvas (iframe) ####
 
 First, you have to set the 'canvas'. 
