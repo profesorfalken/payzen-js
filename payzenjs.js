@@ -199,7 +199,7 @@ function PayzenJS() {
         var iframe = document.createElement("iframe");
         iframe.frameBorder = 0;
         iframe.width = (canvas.width || "600") + "px";
-        iframe.height = (canvas.heigh || "430") + "px";
+        iframe.height = (canvas.height || "430") + "px";
         iframe.name = canvas.id;
         iframe.scrolling = canvas.scrolling;
         return iframe;
