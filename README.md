@@ -125,7 +125,7 @@ Other possible values are:
 
 * Payzen Germany: **de.payzen.eu**
 * Payzen OSB: **secure.osb.pf**
-* Payzen Inde: **secure.payzen.co.in**
+* Payzen India: **secure.payzen.co.in**
 * Payzen Brazil: **secure.payzen.com.br**
 
 To use them you just have to insert a 'target' value in your config:
