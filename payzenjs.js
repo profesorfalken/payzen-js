@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2016-2017 Javier Garcia Alonso
+Copyright (c) 2016-2018 Javier Garcia Alonso
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -201,7 +201,10 @@ function PayzenJS() {
         iframe.width = (canvas.width || "600") + "px";
         iframe.height = (canvas.height || "430") + "px";
         iframe.name = canvas.id;
-        iframe.scrolling = canvas.scrolling;
+        //Fix for IE 11 and older : do not set undefined to scrolling property
+        if (typeof(canvas.scrolling) != "undefined") {
+            iframe.scrolling = canvas.scrolling;
+        }
         return iframe;
     };
 
